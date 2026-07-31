@@ -1,7 +1,11 @@
 import { defineConfig } from 'astro/config';
+import tailwindcss from '@tailwindcss/vite';
 
-// https://astro.build/config
 export default defineConfig({
-  site: 'https://Momentini.github.io', // Sostituisci con il tuo username GitHub
+  // Sostituisci "tuo-username" con il tuo nickname GitHub reale
+  site: 'https://Momentini.github.io',
   base: '/cybershield-edge',
+  vite: {
+    plugins: [tailwindcss()],
+  },
 });
