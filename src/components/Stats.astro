@@ -1,0 +1,32 @@
+---
+// src/components/Stats.astro
+const stats = [
+  { value: "< 1 ms", label: "Latenza di Ispezione", description: "Analisi pacchetti in-line senza degrado delle prestazioni.", color: "text-cyan-600 dark:text-cyan-400" },
+  { value: "99.999%", label: "Uptime SLA Garantito", description: "Infrastruttura ad alta disponibilità su nodi ridondati.", color: "text-emerald-600 dark:text-emerald-400" },
+  { value: "10M+", label: "Eventi Analizzati / Sec", description: "Elaborazione di telemetria in tempo reale.", color: "text-cyan-600 dark:text-cyan-400" },
+  { value: "0.001%", label: "Tasso Falsi Positivi", description: "Modelli AI addestrati su traffico IoT industriale.", color: "text-purple-600 dark:text-purple-400" }
+];
+---
+
+<section class="py-16 bg-slate-50 dark:bg-slate-900/40 border-y border-slate-200 dark:border-slate-800/80 transition-colors duration-300">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {stats.map((stat) => (
+        <div class="flex flex-col items-start p-6 rounded-xl bg-white dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800/80 shadow-sm dark:shadow-none">
+          <span class={`text-4xl sm:text-5xl font-extrabold font-mono tracking-tight ${stat.color} mb-2`}>
+            {stat.value}
+          </span>
+          <h3 class="text-base font-semibold text-slate-900 dark:text-white mb-1">
+            {stat.label}
+          </h3>
+          <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+            {stat.description}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+
+
