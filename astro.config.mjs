@@ -1,11 +1,7 @@
 import { defineConfig } from 'astro/config';
-import tailwind from '@astrojs/tailwind';
 
+// https://astro.build/config
 export default defineConfig({
-  // Sostituisci "tuo-username" con il nickname che sceglierai su GitHub
-  site: 'https://Momentini.github.io',
+  site: 'https://Momentini.github.io', // Sostituisci con il tuo username GitHub
   base: '/cybershield-edge',
-  integrations: [tailwind()],
 });
-
-
