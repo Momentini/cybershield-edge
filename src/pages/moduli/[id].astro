@@ -75,19 +75,17 @@ const { module } = Astro.props;
 <Layout title={`${module.title} | CyberShield Edge`}>
   <Navbar showLinks={false} />
 
-  
   <main class="pt-32 pb-24 bg-slate-50 dark:bg-slate-950 transition-colors duration-300 min-h-screen">
-    <!-- Layout Flex Colonna con gap nativo CSS di 48px tra OGNI blocco -->
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-12">
       
-      <!-- Back Link + Header -->
+      <!-- Back Link corretto verso la sezione della Home -->
       <div>
-        <a 
-          href={`${import.meta.env.BASE_URL}moduli/${module.id}`} 
+        <a
+          href={`${import.meta.env.BASE_URL}#soluzioni`}
           class="inline-flex items-center gap-2 text-xs font-mono text-slate-600 dark:text-slate-400 hover:text-cyan-600 dark:hover:text-cyan-400 mb-6 transition-colors group"
         >
           <span class="group-hover:-translate-x-1 transition-transform">←</span>
-          <span>Torna al modulo in Home</span>
+          <span>Torna alla Home</span>
         </a>
 
         <div>
@@ -130,7 +128,7 @@ const { module } = Astro.props;
         <p class="text-slate-300 leading-relaxed">{module.technicalDetails}</p>
       </div>
 
-      <!-- 4. CTA Box -->
+      <!-- 4. CTA Box corretto con BASE_URL -->
       <div class="p-8 sm:p-10 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-md">
         <h3 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mb-2">
           Vuoi testare questo modulo nel tuo laboratorio?
@@ -139,9 +137,8 @@ const { module } = Astro.props;
           Pianifica una sessione di PoC con i nostri Security Engineer.
         </p>
 
-        <!-- PULSANTE CTA INVARIATO -->
-        <a 
-          href="/#contatti" 
+        <a
+          href={`${import.meta.env.BASE_URL}#contatti`}
           class="inline-block bg-cyan-600 hover:bg-cyan-500 dark:bg-cyan-500 dark:hover:bg-cyan-400 text-white dark:text-slate-950 font-bold text-sm sm:text-base rounded-xl transition-all shadow-md hover:shadow-cyan-500/20"
           style="display: inline-block; padding: 14px 28px;"
         >
@@ -153,4 +150,4 @@ const { module } = Astro.props;
   </main>
 
   <Footer showLinks={false} />
-</Layout>
+</Layout> 
