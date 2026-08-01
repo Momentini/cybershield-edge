@@ -82,3 +82,23 @@
 - **Approccio Tailwind Nativo:** Scelta di evitare sovrascritture CSS globali forzate a favore delle varianti `dark:` su ogni singolo componente, garantendo manutenibilità e comportamento prevedibile del motore JIT di Tailwind.
 - **Accessibilità Contrasto:** Garantito il rispetto dei contrasti WCAG sia su sfondo chiaro (`slate-50` / `slate-100` con testo `slate-900`) sia su sfondo scuro.
 
+## Sessione 9 — Brochure Tecnica PDF, Troubleshooting CI/CD & Deploy Finale
+
+### 🎯 Obiettivi Completati
+1. **Generazione e integrazione Brochure PDF:** Creata e posizionata la scheda tecnica commerciale/tecnica (`cybershield-edge-brochure.pdf`) in `/public` collegata con il pulsante di download.
+2. **Configurazione Tailwind v4 + Vite in Astro:** Risolte le dipendenze tra Astro e PostCSS attraverso l'integrazione del plugin `@tailwindcss/vite` in `astro.config.mjs`.
+3. **Pipeline CI/CD con GitHub Actions:**
+   * Aggiornato il runner all'ambiente Node.js v22 per compatibilità nativa con le build Astro.
+   * Creato lo script esplicito di installazione e build (`npm ci` -> `npm run build`).
+4. **Fix del Routing Statico e BASE_URL:**
+   * Risolti gli errori 404 su GitHub Pages sostituendo i percorsi assoluti con `${import.meta.env.BASE_URL}`.
+   * Riposizionato il file delle rotte dinamiche dei moduli in `src/pages/moduli/[id].astro`.
+
+### 🛠️ Problem Solving & Scelte Tecniche
+* **Errore Tailwind/PostCSS in CI:** La versione più recente di Astro/Vite richiedeva la dichiarazione esplicita del plugin `@tailwindcss/vite` nell'array `plugins` del file di configurazione `astro.config.mjs`.
+* **Subpath Deployment:** Poiché GitHub Pages ospita il sito sotto una sottocartella (`/cybershield-edge/`), tutti i link interni e gli asset statici utilizzano `import.meta.env.BASE_URL` per garantire la compatibilità sia in ambiente locale (`localhost`) che in produzione.
+
+### 🟢 Stato Finale
+* **Build Status:** Passing 🟢
+* **Sito Live:** Pubblicato ed eseguito su GitHub Pages.
+* **Progetto Completato e Pronto per Portfolio.**
